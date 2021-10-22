@@ -18,7 +18,20 @@ public class CoreCompetency {
         this.value = value;
     }
 
-    // Custom toString, equals, and hashCode methods:
+    // Custom toString, equals, and hashCode methods
+
+
+    public String getValue() {
+        return value;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 
     @Override
     public String toString() {
