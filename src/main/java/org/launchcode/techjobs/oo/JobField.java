@@ -1,28 +1,20 @@
 package org.launchcode.techjobs.oo;
-
 import java.util.Objects;
 
-public class  Location extends JobField {
-    public Location(String value) {
-        super(value);
-    }
-
-    /*private int id;
+public abstract class JobField {
+    private int id;
     private static int nextId = 1;
     private String value;
 
-    public Location() {
+    public JobField() {
         id = nextId;
         nextId++;
     }
-    public Location(String value) {
+
+    public JobField(String value) {
         this();
         this.value = value;
     }
-
-    // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
-    //  constructor should also call the empty constructor in order to initialize the 'id' field.
-
 
     // Custom toString, equals, and hashCode methods:
 
@@ -32,11 +24,11 @@ public class  Location extends JobField {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
-        if (!(o instanceof Location)) return false;
-        Location location = (Location) o;
-        return getId() == location.getId();
+        if (!(o instanceof JobField)) return false;
+        JobField jobField = (JobField) o;
+        return getId() == jobField.getId();
     }
 
     @Override
@@ -56,6 +48,6 @@ public class  Location extends JobField {
 
     public void setValue(String value) {
         this.value = value;
-    }*/
+    }
 
 }
