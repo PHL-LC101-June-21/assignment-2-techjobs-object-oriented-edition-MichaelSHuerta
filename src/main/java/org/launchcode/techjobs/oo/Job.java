@@ -22,17 +22,17 @@ public class Job {
         id = nextId;
         nextId++;
     }
-    public Job(String fieldName,
-               Employer fieldEmployer,
-               Location fieldLocation,
-               PositionType fieldPositionType,
-               CoreCompetency fieldCoreCompetency) {
+    public Job(String name,
+               Employer employer,
+               Location location,
+               PositionType positionType,
+               CoreCompetency coreCompetency) {
         this();
-        name = fieldName;
-        employer = fieldEmployer;
-        location = fieldLocation;
-        positionType = fieldPositionType;
-        coreCompetency = fieldCoreCompetency;
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -100,4 +100,32 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-}
+    @Override
+    public String toString() {
+        String na = "Data not available";
+        if (name == null || name == "") {
+            name = na;
+        }
+        if (employer == null || employer.getValue() == "") {
+            employer.setValue(na);
+        }
+        if (location == null || location.getValue() == "") {
+            location.setValue(na);
+        }
+        if (positionType == null || positionType.getValue() == "") {
+            positionType.setValue(na);
+        }
+        if (coreCompetency == null || coreCompetency.getValue() == "") {
+            coreCompetency.setValue(na);
+        }
+
+        return "\n" + "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n";
+
+
+      }
+    }
